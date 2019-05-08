@@ -39,7 +39,7 @@ func getKeygenCmd() *cobra.Command {
 			return nil
 		},
 	}
-	keygenCmd.Flags().StringVarP(&privFile, "key", "k", "key", "private key file")
+	keygenCmd.Flags().StringVarP(&privFile, "key", "", "key", "private key file")
 	return keygenCmd
 }
 
@@ -79,7 +79,7 @@ func main() {
 			return nil
 		},
 	}
-	createAccCmd.Flags().StringVarP(&user, "user", "u", "loom", "user")
+	createAccCmd.Flags().StringVarP(&user, "user", "", "loom", "user")
 
 	var value int
 	saveStateCmd := &cobra.Command{
@@ -112,7 +112,7 @@ func main() {
 		},
 	}
 	saveStateCmd.Flags().IntVarP(&value, "value", "v", 0, "integer value")
-	saveStateCmd.Flags().StringVarP(&user, "user", "u", "loom", "user")
+	saveStateCmd.Flags().StringVarP(&user, "user", "", "loom", "user")
 
 	getStateCmd := &cobra.Command{
 		Use:           "get",
@@ -138,7 +138,7 @@ func main() {
 			return nil
 		},
 	}
-	getStateCmd.Flags().StringVarP(&user, "user", "u", "loom", "user")
+	getStateCmd.Flags().StringVarP(&user, "user", "", "loom", "user")
 
 	callCmd.AddCommand(createAccCmd)
 	callCmd.AddCommand(saveStateCmd)
