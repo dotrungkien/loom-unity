@@ -56,7 +56,7 @@ await this.contract.CallAsync("SetMsg", new MapEntry
 
 ### Write contract
 
-- nothing special, we create a truffle project and migrate to dappchain as normal truffle project
+- nothing special, we create a truffle project and migrate contracts to dappchain as normal truffle project
 
 - before migrate, we need generate a private-public key pair
 
@@ -64,7 +64,7 @@ await this.contract.CallAsync("SetMsg", new MapEntry
 loom genkey -k priv -a pub
 ```
 
-- just adjust the truffle config to connect with dappchain
+- just add truffle config to connect with dappchain
 
 ```js
 const { readFileSync } = require("fs")
@@ -111,5 +111,5 @@ TileMapStateOutput result = await this.contract.StaticCallDTOTypeOutputAsync<Til
 
 ## Summary
 
-- still not clear the benefit of using plugin contract. Furthermore, golang is seem to be not easy to implement.
-- using evm-based contrat is familiar with who has experience in develop ethereum application. Maybe good place to start with.
+- still not clear the benefit of using plugin contract. Furthermore, golang seems to be not easy to implement.
+- using evm-based contract is more familiar with who has experience in develop ethereum applications. Maybe good place to start with.
